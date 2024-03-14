@@ -4,17 +4,15 @@ let NM = readLine()!.split(separator: " ").map { Int(String($0))! }
 let N = NM[0]
 let M = NM[1]
 
-let sequence = readLine()!.split(separator: " ").map { Int(String($0))! }
+let numbers = readLine()!.split(separator: " ").map { Int(String($0))! }
 var count = 0
 
-for startIndex in 0..<N {
+for i in 0..<N {
     var sum = 0
-    for endIndex in startIndex..<N {
-        sum += sequence[endIndex]
-        if sum == M {
+    for j in i..<N {
+        sum += numbers[j]
+        if M == sum {
             count += 1
-            break
-        } else if sum > M {
             break
         }
     }
